@@ -567,3 +567,31 @@
 
 - Resume Phase 2 — OPNsense Firewall Configuration and Validation
 
+## July 13, 2026 — Git and GitHub Portfolio Baseline
+
+### Configuration
+
+- Installed Git for Windows version 2.55.0.
+- Installed GitHub CLI version 2.96.0.
+- Configured Git author name as `BexPy`.
+- Configured commit email as `BexPy@users.noreply.github.com`.
+- Initialized local repository at `C:\VioletOps\GitHub`.
+- Created private GitHub repository `BexPy/VioletOps`.
+- Added GitHub remote named `origin`.
+- Pushed the sanitized Phase 2.5 documentation to branch `main`.
+
+### Security Controls
+
+- Only documentation files were copied into the Git repository.
+- VM files, ISOs, backups, exports, and operational directories were excluded.
+- Credential and sensitive-data keyword scans were completed.
+- Monitor serial numbers were redacted from the public copy.
+- Personal iCloud email was removed from commit metadata.
+- Repository remained private during review and upload.
+
+### Verification
+
+- Local branch `main` matches `origin/main`.
+- Verified commit: `c809f82`.
+- Git working tree verified clean.
+
