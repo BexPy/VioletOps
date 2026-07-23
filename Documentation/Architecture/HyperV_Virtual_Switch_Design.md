@@ -1,4 +1,4 @@
-﻿# VioletOps Hyper-V Virtual Switch Design
+# VioletOps Hyper-V Virtual Switch Design
 
 Status: Complete  
 Started: July 3, 2026
@@ -7,7 +7,7 @@ Started: July 3, 2026
 
 - Active host connection: Wi-Fi
 - Wi-Fi adapter: Intel(R) Wireless-AC 9560 160MHz
-- Host Wi-Fi IPv4 address: 10.0.0.130
+- Host Wi-Fi IPv4 address: <HOST-1-MANAGEMENT-IP>
 - Physical Ethernet adapter: Intel(R) Ethernet Connection (7) I219-LM
 - Physical Ethernet status: Disconnected
 - Existing Microsoft-managed switch: Default Switch
@@ -20,9 +20,9 @@ Started: July 3, 2026
 - Physical adapter binding: None
 - Host virtual adapter: vEthernet (VioletOps-LAN)
 - Host virtual adapter status: Up
-- Host virtual adapter MAC address: 00-15-5D-0A-F0-13
-- Host IPv4 address: 10.10.10.2/24
-- Network: 10.10.10.0/24
+- Host virtual adapter MAC address: <HOST-1-LAN-MAC>
+- Host IPv4 address: <HOST-1-LAB-IP>/24
+- Network: <VIOLETOPS-LAN>
 - Default gateway: None
 - DNS servers: None
 - Connected virtual machines: OPNsense-Gateway
@@ -34,7 +34,7 @@ Started: July 3, 2026
 
 - Created the `VioletOps-LAN` internal Hyper-V virtual switch.
 - Verified the matching Windows host adapter was created and is operational.
-- Assigned static IPv4 address `10.10.10.2/24` to `vEthernet (VioletOps-LAN)`.
+- Assigned static IPv4 address `<HOST-1-LAB-IP>/24` to `vEthernet (VioletOps-LAN)`.
 - Verified no default gateway is configured.
 - Verified no DNS servers are configured.
 - Confirmed the adapter remains isolated from the host Wi-Fi route.
@@ -87,7 +87,7 @@ Started: July 3, 2026
 - `Default Switch`: Internal, Microsoft-managed
 - `VioletOps-LAN`: Internal
 - `VioletOps-WAN`: External, bound to Intel I219-LM
-- Windows LAN address: `10.10.10.2/24`
+- Windows LAN address: `<HOST-1-LAB-IP>/24`
 - OPNsense `LAN` → `VioletOps-LAN`
 - OPNsense `WAN` → `VioletOps-WAN`
 - OPNsense power state: Off

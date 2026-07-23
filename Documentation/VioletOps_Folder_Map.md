@@ -45,4 +45,3 @@ Computer folders are organized by technology and file type.
 ChatGPT Library folders are organized by documentation category.
 
 The folder names do not need to be identical as long as this folder map explains where information belongs.
-

@@ -1,4 +1,4 @@
-﻿# VioletOps Disk Layout Comparison
+# VioletOps Disk Layout Comparison
 
 Status: Complete  
 Started: July 3, 2026

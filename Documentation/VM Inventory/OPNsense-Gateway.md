@@ -1,4 +1,4 @@
-﻿# OPNsense-Gateway VM Inventory
+# OPNsense-Gateway VM Inventory
 
 Status: In Progress  
 Last Updated: July 3, 2026
@@ -47,8 +47,8 @@ Last Updated: July 3, 2026
 
 - VioletOps LAN switch: `VioletOps-LAN`
 - Switch type: Internal
-- VioletOps LAN network: `10.10.10.0/24`
-- Windows host LAN address: `10.10.10.2/24`
+- VioletOps LAN network: `<VIOLETOPS-LAN>`
+- Windows host LAN address: `<HOST-1-LAB-IP>/24`
 
 ## Change Record
 

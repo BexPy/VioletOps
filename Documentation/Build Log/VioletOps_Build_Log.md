@@ -1318,7 +1318,7 @@
 - GitHub documentation remains unchanged pending sanitization review.
 
 
-### Wazuh Endpoint Integration Verification — 2026-07-21
+### Wazuh Endpoint Integration Verification â€” 2026-07-21
 
 - Enrolled VIOLETOPS-DC01 as Wazuh agent 001.
 - Enrolled VIOLETOPS-WIN11 as Wazuh agent 002.

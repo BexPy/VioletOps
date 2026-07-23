@@ -1,4 +1,4 @@
-﻿# VioletOps Hardware Inventory
+# VioletOps Hardware Inventory
 
 
 
@@ -28,9 +28,9 @@ Last Updated: July 11, 2026
 
 - Management internet: Wi-Fi
 
-- Wi-Fi IPv4 address: 10.0.0.130
+- Wi-Fi IPv4 address: <HOST-1-MANAGEMENT-IP>
 
-- VioletOps LAN host address: 10.10.10.2/24
+- VioletOps LAN host address: <HOST-1-LAB-IP>/24
 
 - Notes:
 
@@ -50,7 +50,7 @@ Last Updated: July 11, 2026
 
 - Model: Dell OptiPlex 7070
 
-- Device name: DESKTOP-OD4CHNC
+- Device name: <HOST-2-NAME>
 
 - CPU: Intel Core i7-9700 @ 3.00 GHz
 
@@ -70,7 +70,7 @@ Last Updated: July 11, 2026
 
 - Current internet connection: Wi-Fi 2
 
-- Previous Ethernet management IPv4 address: 10.0.0.110
+- Previous Ethernet management IPv4 address: <HOST-2-PREVIOUS-MANAGEMENT-IP>
 
 - Ethernet MAC address: E4-54-E8-96-76-5C
 
@@ -113,7 +113,7 @@ Last Updated: July 11, 2026
 
 - Current use: Available for VioletOps lab networking
 
-- Router connection: Host 2 is connected to the home router by Wi-Fi at 10.0.0.226
+- Router connection: Host 2 is connected to the home router by Wi-Fi at <HOST-2-MANAGEMENT-IP>
 
 
 
@@ -200,7 +200,3 @@ Last Updated: July 11, 2026
 - Serial number: `Y258220001247`
 - Current power state: Powered on
 - Current deployment status: Powered on for testing; not yet connected to the network
-
-
-
-

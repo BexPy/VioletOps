@@ -1,4 +1,4 @@
-﻿# VioletOps Firewall Rules
+# VioletOps Firewall Rules
 
 Status: In Progress  
 Last Updated: July 11, 2026
@@ -9,8 +9,8 @@ Last Updated: July 11, 2026
 - VM host: Host 1
 - WAN interface: `hn0`
 - LAN interface: `hn1`
-- LAN address: `10.10.10.1/24`
-- LAN DHCP range: `10.10.10.100–10.10.10.199`
+- LAN address: `<OPNSENSE-LAN-IP>/24`
+- LAN DHCP range: `<OPNSENSE-LAN-IP>00–<OPNSENSE-LAN-IP>99`
 - WAN cable: Disconnected
 - WAN validation: Not completed
 
@@ -30,7 +30,7 @@ OPNsense firewall configuration remains paused at the verified LAN baseline unti
 
 ## Host 1 Management Network ICMP Rule
 
-- Host: `DESKTOP-BG2AKA3`
+- Host: `<HOST-1-NAME>`
 - Interface: `Wi-Fi`
 - Network profile: Private
 - Rule name: `Core Networking Diagnostics - ICMP Echo Request (ICMPv4-In)`
@@ -40,12 +40,12 @@ OPNsense firewall configuration remains paused at the verified LAN baseline unti
 - Enabled: True
 - Scope: Private profile only
 - Purpose: Allow verified management connectivity from Host 2
-- Verification: Host 2 successfully pinged `10.0.0.130`
+- Verification: Host 2 successfully pinged `<HOST-1-MANAGEMENT-IP>`
 - Public network exposure: Not allowed
 
 ## Host 1 Management Network ICMP Rule
 
-- Host: `DESKTOP-BG2AKA3`
+- Host: `<HOST-1-NAME>`
 - Interface: `Wi-Fi`
 - Network profile: Private
 - Rule name: `Core Networking Diagnostics - ICMP Echo Request (ICMPv4-In)`
@@ -55,7 +55,7 @@ OPNsense firewall configuration remains paused at the verified LAN baseline unti
 - Enabled: True
 - Scope: Private profile only
 - Purpose: Allow verified management connectivity from Host 2
-- Verification: Host 2 successfully pinged `10.0.0.130`
+- Verification: Host 2 successfully pinged `<HOST-1-MANAGEMENT-IP>`
 - Public network exposure: Not allowed
 
 ## Mouse Without Borders Private-Network Rules
