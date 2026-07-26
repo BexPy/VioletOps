@@ -497,3 +497,29 @@ Initial VM placement has been approved, but no additional Windows, Linux, SIEM, 
 - VioletOps-DC01 remains the Active Directory domain controller and source of account-lockout Event ID 4740.
 - VioletOps-WAZUH remains the security-monitoring server receiving Windows telemetry.
 - No CPU, memory, storage, MAC address, IP address, virtual-switch, checkpoint, or host-placement changes occurred.
+
+## Phase 5 Centralized Logging Inventory Update - 2026-07-25
+
+### VioletOps-WIN11
+
+- Installed Splunk Universal Forwarder 10.4.1.
+- SplunkForwarder service configured for automatic startup.
+- Forwarding connection to VioletOps-SPLUNK verified active over TCP 9997.
+- Forwarded Windows event channels:
+  - Security
+  - Microsoft-Windows-PowerShell/Operational
+  - Microsoft-Windows-Sysmon/Operational
+- Splunk service account granted local Event Log Readers access for Sysmon collection.
+- Security, PowerShell, and Sysmon telemetry verified after controlled reboot.
+
+### VioletOps-SPLUNK
+
+- Splunk Enterprise 10.4.1 remained the installed version.
+- TCP 9997 listener enabled for Windows Universal Forwarder traffic.
+- UDP 5514 listener enabled for OPNsense firewall filter logs.
+- Windows and OPNsense telemetry verified after controlled reboot.
+
+### VM Change Summary
+
+- No VM was created, deleted, moved, resized, or reconfigured.
+- No CPU, memory, disk, MAC address, IP address, virtual-switch, checkpoint, or host-placement change occurred.

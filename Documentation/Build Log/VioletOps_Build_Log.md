@@ -1318,7 +1318,7 @@
 - GitHub documentation remains unchanged pending sanitization review.
 
 
-### Wazuh Endpoint Integration Verification â€” 2026-07-21
+### Wazuh Endpoint Integration Verification - 2026-07-21
 
 - Enrolled VIOLETOPS-DC01 as Wazuh agent 001.
 - Enrolled VIOLETOPS-WIN11 as Wazuh agent 002.
@@ -1363,3 +1363,34 @@
 - Recorded that the Splunk email-alert security warning was not applicable because email alert actions are not configured.
 - No OPNsense firewall, NAT, DHCP, VLAN, routing, physical-switch, or virtual-switch changes were required.
 - GitHub documentation remains unchanged pending sanitization review.
+
+## Phase 5 - Centralized Logging and Security Telemetry - 2026-07-25
+
+- Verified Wazuh manager, indexer, dashboard, and Windows agents were healthy.
+- Verified Windows Security telemetry from the domain controller and Windows workstation.
+- Enabled and verified process-creation auditing and PowerShell Script Block Logging.
+- Installed Sysmon on the Windows workstation and verified process-creation telemetry.
+- Installed Splunk Universal Forwarder 10.4.1 on the Windows workstation.
+- Configured selected Windows event channels for Splunk collection:
+  - Security
+  - Microsoft-Windows-PowerShell/Operational
+  - Microsoft-Windows-Sysmon/Operational
+- Enabled the Splunk receiving listener on TCP 9997.
+- Verified the Universal Forwarder maintained an active connection to the Splunk server.
+- Granted the Splunk service account least-privilege membership in the local Event Log Readers group so it could access the Sysmon channel.
+- Verified end-to-end Splunk ingestion of:
+  - Windows Security Event ID 4688
+  - PowerShell Operational Event IDs 4103 and 4104
+  - Sysmon process and network telemetry
+- Configured OPNsense to forward firewall filter logs to Splunk over UDP 5514.
+- Configured Splunk source `udp:5514` and sourcetype `opnsense:filterlog`.
+- Verified OPNsense firewall block events were indexed successfully.
+- Performed controlled reboots of the Splunk and Wazuh servers.
+- Verified both Splunk listeners survived reboot:
+  - TCP 9997 for Windows forwarding
+  - UDP 5514 for OPNsense firewall logs
+- Verified Wazuh services and both Windows agents returned active after reboot.
+- Verified fresh Windows telemetry from both endpoints after reboot.
+- Verified Splunk continued ingesting Windows and OPNsense telemetry after reboot.
+- No VM hardware allocation, VM placement, IP assignment, NAT, DHCP, VLAN, routing, or firewall filtering rule changes were made.
+- Certificate validation and indexer acknowledgment remain documented as future Splunk forwarding hardening tasks.

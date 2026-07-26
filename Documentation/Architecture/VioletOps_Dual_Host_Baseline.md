@@ -714,3 +714,38 @@ Status: Implemented and verified across Host 1, Host 2, and OPNsense
 - Wazuh verified account-lockout detection for Event ID 4740 from VioletOps-DC01.
 - Host 1 and VioletOps-WIN11 synchronize time through VioletOps-DC01.
 - No IP addresses, firewall rules, VLANs, routing, virtual switches, or VM placement changed during this Phase 4 update.
+
+## Phase 5 Centralized Logging Architecture Update - 2026-07-25
+
+### Windows Telemetry to Splunk
+
+- Source endpoint: `VIOLETOPS-WIN11`
+- Forwarder: Splunk Universal Forwarder 10.4.1
+- Destination: `VioletOps-SPLUNK`
+- Transport: TCP 9997
+- Data path: `VIOLETOPS-WIN11 -> Splunk Universal Forwarder -> TCP 9997 -> VioletOps-SPLUNK`
+- Collected sources:
+  - Windows Security
+  - Microsoft-Windows-PowerShell/Operational
+  - Microsoft-Windows-Sysmon/Operational
+- Effective index: `main`
+- XML event rendering enabled.
+- Verified Security, PowerShell, and Sysmon telemetry after controlled reboot.
+
+### OPNsense Firewall Telemetry to Splunk
+
+- Source device: `OPNsense-Gateway`
+- Log application: `filter (filterlog)`
+- Destination: `VioletOps-SPLUNK`
+- Transport: UDP 5514
+- Data path: `OPNsense-Gateway -> UDP 5514 -> VioletOps-SPLUNK`
+- Splunk source: `udp:5514`
+- Splunk sourcetype: `opnsense:filterlog`
+- Verified firewall block events after controlled reboot.
+
+### Change Summary
+
+- Added one Splunk TCP listener for Windows forwarding.
+- Added one Splunk UDP listener for OPNsense firewall logs.
+- Added one OPNsense remote logging destination.
+- No VM placement, hardware allocation, IP assignment, NAT, DHCP, VLAN, routing, or firewall filtering rule changes were made.
