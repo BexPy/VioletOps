@@ -1,0 +1,32 @@
+﻿{
+    "AlertId":  "VO-4625-20260730064500",
+    "DetectionName":  "Repeated Failed Windows Logons",
+    "RiskScore":  40,
+    "RiskLevel":  "Medium",
+    "Decision":  "Investigate promptly and monitor for additional failed or successful logons.",
+    "FalsePositiveConsiderations":  [
+                                        "User may have entered an outdated password.",
+                                        "A saved credential or scheduled task may be using an old password.",
+                                        "The failed logon may be part of an approved administrative test.",
+                                        "Local or loopback source addresses may indicate activity from the same endpoint."
+                                    ],
+    "EscalationCriteria":  [
+                               "Risk score is 70 or higher.",
+                               "A privileged account is targeted.",
+                               "Repeated failures affect multiple accounts.",
+                               "A successful logon follows repeated failures.",
+                               "The source address is unexpected or external.",
+                               "Related suspicious activity is detected."
+                           ],
+    "ResponseControls":  {
+                             "AutomaticDestructiveActionsAllowed":  false,
+                             "AnalystApprovalRequired":  true,
+                             "AccountDisableAllowedAutomatically":  false,
+                             "HostIsolationAllowedAutomatically":  false,
+                             "FirewallBlockAllowedAutomatically":  false
+                         },
+    "RecommendedActionStatus":  "Recommended",
+    "ContainmentApprovalStatus":  "Pending analyst approval",
+    "DecisionStatus":  "Success",
+    "TestData":  false
+}

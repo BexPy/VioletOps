@@ -1,0 +1,31 @@
+﻿{
+    "RunId":  "RUN-20260730-064339",
+    "AlertId":  "VO-4625-20260730064500",
+    "DetectionName":  "Repeated Failed Windows Logons",
+    "RiskScore":  40,
+    "RiskLevel":  "Medium",
+    "Decision":  "Investigate promptly and monitor for additional failed or successful logons.",
+    "InvestigationSteps":  [
+                               "Review failed-logon frequency and time window.",
+                               "Confirm whether the targeted account owner expected the activity.",
+                               "Review related successful logons.",
+                               "Check the source address and workstation context.",
+                               "Review nearby authentication and endpoint events.",
+                               "Escalate if privileged access or additional suspicious activity is found."
+                           ],
+    "ContainmentRecommendations":  [
+                                       "Reset credentials if account compromise is confirmed.",
+                                       "Disable the account only with analyst approval.",
+                                       "Isolate the endpoint only with analyst approval.",
+                                       "Block a malicious source address only with analyst approval.",
+                                       "Preserve relevant logs before making containment changes."
+                                   ],
+    "SafeResponseAction":  "Generated incident summary and audit record.",
+    "ResponseStatus":  "Recommended",
+    "AnalystApprovalRequired":  true,
+    "ContainmentApprovalStatus":  "Pending analyst approval",
+    "AutomaticContainmentExecuted":  false,
+    "WorkflowStatus":  "Success",
+    "GeneratedAt":  "2026-07-30T06:43:39.5920738-05:00",
+    "TestData":  false
+}

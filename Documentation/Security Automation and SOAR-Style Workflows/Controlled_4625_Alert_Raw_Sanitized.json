@@ -1,0 +1,9 @@
+﻿{
+  "Timestamp": "2026-07-30T06:45:00-05:00",
+  "Host": "WORKSTATION-01.example.local",
+  "Account": "test.user",
+  "EventId": 4625,
+  "SourceAddress": "192.0.2.25",
+  "DetectionName": "Repeated Failed Windows Logons",
+  "Severity": "Medium"
+}

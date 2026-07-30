@@ -1,0 +1,41 @@
+﻿{
+    "SchemaVersion":  "1.0",
+    "AlertId":  "VO-4625-20260730064500",
+    "Timestamp":  "2026-07-30T06:45:00.0000000-05:00",
+    "DetectionName":  "Repeated Failed Windows Logons",
+    "EventId":  4625,
+    "HostContext":  {
+                        "Hostname":  "WORKSTATION-01.example.local",
+                        "OperatingSystem":  "Windows 11",
+                        "EndpointRole":  "Domain-joined workstation",
+                        "ContextStatus":  "Success"
+                    },
+    "AccountContext":  {
+                           "AccountName":  "test.user",
+                           "AccountType":  "Standard user",
+                           "Privileged":  false,
+                           "ContextStatus":  "Success"
+                       },
+    "SourceAddress":  "192.0.2.25",
+    "EventFrequency":  {
+                           "Count":  1,
+                           "WindowMinutes":  10
+                       },
+    "RelatedEvents":  {
+                          "SuccessfulLogons":  0
+                      },
+    "MitreAttack":  {
+                        "Tactic":  "Credential Access",
+                        "Technique":  "Brute Force",
+                        "TechniqueId":  "T1110"
+                    },
+    "RiskScore":  40,
+    "RiskLevel":  "Medium",
+    "EnrichmentFailures":  [
+                               "Event frequency unavailable: No events were found that match the specified selection criteria.",
+                               "Related-event lookup unavailable: No events were found that match the specified selection criteria."
+                           ],
+    "EnrichmentStatus":  "Partial",
+    "EnrichedAt":  "2026-07-30T06:43:38.7452868-05:00",
+    "TestData":  false
+}

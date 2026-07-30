@@ -1,0 +1,18 @@
+﻿{
+    "SchemaVersion":  "1.0",
+    "AlertId":  "VO-4625-20260730064500",
+    "Timestamp":  "2026-07-30T06:45:00.0000000-05:00",
+    "Host":  "WORKSTATION-01.example.local",
+    "Account":  "test.user",
+    "EventId":  4625,
+    "SourceAddress":  "192.0.2.25",
+    "DetectionName":  "Repeated Failed Windows Logons",
+    "Severity":  "Medium",
+    "Provider":  "",
+    "WorkstationName":  "",
+    "LogonType":  "",
+    "Status":  "",
+    "TestData":  false,
+    "NormalizedAt":  "2026-07-30T06:43:38.1688857-05:00",
+    "NormalizationStatus":  "Success"
+}
