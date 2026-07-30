@@ -147,6 +147,38 @@ This project demonstrates:
 - Repeatable testing
 - Public-data sanitization
 
+## Limitations and Future Improvements
+
+Current limitations:
+
+- The workflow uses controlled JSON input rather than direct ingestion from a live SIEM alert.
+- Risk scoring is deterministic and based on a limited set of predefined conditions.
+- Host, account, and event-frequency context is simulated for safe portfolio validation.
+- The workflow recommends containment but does not connect to Active Directory, endpoint-isolation, or firewall APIs.
+- Analyst approval is represented as a required decision point rather than an integrated approval platform.
+- The workflow focuses on Windows Security Event ID 4625 and does not yet correlate multiple detection sources.
+
+Future improvements:
+
+- Integrate direct alert ingestion from Splunk or another SIEM.
+- Add configurable risk thresholds and scoring rules.
+- Correlate Event IDs 4625, 4740, and related endpoint or firewall events.
+- Add approved threat-intelligence enrichment.
+- Integrate a ticketing or case-management platform.
+- Add authenticated analyst approval before containment actions.
+- Add unit tests and automated regression testing.
+- Support additional authentication and endpoint detection scenarios.
+
+## Interview Talking Points
+
+- I built a reusable PowerShell workflow that processes failed-logon alerts through normalization, enrichment, decision logic, response recommendation, and audit logging.
+- I used deterministic risk scoring so the same input produces consistent and explainable decisions.
+- I kept destructive containment disabled and required analyst approval for account, endpoint, firewall, and Active Directory changes.
+- I tested both successful and failure paths, including missing fields, missing outputs, and repeated workflow runs.
+- I created structured JSON and JSONL outputs so an analyst can review, automate, and audit each stage.
+- I sanitized the public release and scanned it for internal infrastructure values before committing it.
+- The project demonstrates SOAR-style orchestration without pretending that a script should replace analyst judgment.
+- A future production version could ingest SIEM alerts directly and connect to approved response APIs with authenticated approval controls.
 ## Outcome
 
 The project produced a reusable and portable PowerShell-based security automation workflow. It reduces repetitive analyst work while keeping high-impact containment decisions under human control.
