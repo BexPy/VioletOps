@@ -749,3 +749,34 @@ Status: Implemented and verified across Host 1, Host 2, and OPNsense
 - Added one Splunk UDP listener for OPNsense firewall logs.
 - Added one OPNsense remote logging destination.
 - No VM placement, hardware allocation, IP assignment, NAT, DHCP, VLAN, routing, or firewall filtering rule changes were made.
+
+## Phase 10 Section 8 - Purple Team Detection Engineering Update - 2026-08-08
+
+### Scenario 2 Telemetry Improvement
+
+- MITRE ATT&CK technique: T1018 - Remote System Discovery.
+- Controlled source: `VioletOps-KALI` at `<KALI-IP>`.
+- Monitored target: `VioletOps-WIN11` at `<WIN11-IP>`.
+- Windows Defender Firewall successful-connection logging was enabled on the WIN11 Domain profile.
+- The existing inbound ICMPv4 Echo Request rule remained restricted to the approved Kali source.
+- Firewall telemetry is written to the standard Windows Defender Firewall log.
+- Splunk Universal Forwarder was extended to collect the Windows Firewall log.
+- Effective Splunk index: `main`.
+- Firewall telemetry sourcetype: `windows:firewall`.
+
+### Detection Path
+
+- Data path: `VioletOps-WIN11 -> Splunk Universal Forwarder -> TCP 9997 -> VioletOps-SPLUNK`.
+- Detection: `VioletOps - T1018 Remote System Discovery`.
+- The detection identifies approved ICMP discovery traffic in newly indexed Windows Firewall telemetry.
+- Validation identified several minutes of ingestion latency.
+- Detection timing was tuned to account for late-arriving events while limiting repeated alerts from older indexed telemetry.
+- Runtime validation confirmed successful telemetry collection, Splunk ingestion, detection matching, and creation of a Splunk Triggered Alerts entry.
+
+### Change Summary
+
+- No VM placement or hardware allocation changed.
+- No IP address, subnet, gateway, DNS, DHCP, NAT, VLAN, routing, virtual-switch, or physical-switch configuration changed.
+- No new firewall allow or block rule was created.
+- Changes were limited to Windows Firewall logging, Splunk Universal Forwarder collection, and Splunk detection engineering.
+- Phase 10 Section 8 is technically validated; Phase 10 Section 11 documentation and portfolio reconciliation is in progress.

@@ -152,3 +152,10 @@ These addresses are reserved in documentation only. They have not yet been confi
 - Address remains outside the OPNsense DHCP scope of <VIOLETOPS-DHCP-START>â€“<VIOLETOPS-DHCP-END>.
 - Ubuntu UFW is inactive; access is currently controlled by the isolated VioletOps LAN boundary.
 - No DHCP, NAT, firewall, VLAN, routing, physical-switch, or virtual-switch changes were required.
+
+## Phase 10 Section 8 - Detection Engineering Addressing No-Change Record - 2026-08-08
+
+- No IP address, subnet, gateway, DNS server, DHCP scope, route, NAT rule, VLAN, virtual switch, or physical switch assignment changed.
+- Existing VioletOps source, target, and Splunk addressing remained unchanged.
+- Section 8 changes were limited to Windows Firewall logging, Splunk Universal Forwarder collection, and Splunk detection engineering.
+- Phase 10 Section 8 is technically validated; Phase 10 Section 11 documentation and portfolio reconciliation is in progress.

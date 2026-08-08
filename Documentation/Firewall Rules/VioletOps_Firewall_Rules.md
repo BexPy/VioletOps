@@ -67,7 +67,7 @@ OPNsense firewall configuration remains paused at the verified LAN baseline unti
 - Action: Allow
 - Profile: Private
 - Program:
-  - `C:\Users\Admin\AppData\Local\PowerToys\PowerToys.MouseWithoutBorders.exe`
+  - `C:\Users\<HOST-1-USER>\AppData\Local\PowerToys\PowerToys.MouseWithoutBorders.exe`
 
 ### Host 2
 
@@ -76,13 +76,13 @@ OPNsense firewall configuration remains paused at the verified LAN baseline unti
 - Action: Allow
 - Profile: Private
 - Program:
-  - `C:\Users\pp\AppData\Local\PowerToys.MouseWithoutBorders.exe`
+  - `C:\Users\<HOST-2-USER>\AppData\Local\PowerToys.MouseWithoutBorders.exe`
 - Rule: `VioletOps - Mouse Without Borders Helper Inbound`
 - Direction: Inbound
 - Action: Allow
 - Profile: Private
 - Program:
-  - `C:\Users\pp\AppData\Local\PowerToys.MouseWithoutBordersHelper.exe`
+  - `C:\Users\<HOST-2-USER>\AppData\Local\PowerToys.MouseWithoutBordersHelper.exe`
 
 ### Verification
 
@@ -92,3 +92,29 @@ OPNsense firewall configuration remains paused at the verified LAN baseline unti
 - Cross-PC clipboard copy and paste works.
 - PowerToys `Refresh connections` restored the session.
 - Public-profile access is not allowed.
+
+## Phase 10 Section 8 - WIN11 Firewall Logging Update - 2026-08-08
+
+### Firewall State
+
+- Target: `VioletOps-WIN11`.
+- Windows Defender Firewall Domain profile remains enabled.
+- Existing inbound ICMPv4 Echo Request rule remains enabled and restricted to the approved Kali source.
+- No new Windows Firewall allow or block rule was created.
+- No existing firewall rule was deleted or broadened.
+
+### Logging Change
+
+- Successful-connection logging was enabled on the Domain profile.
+- Blocked-connection logging remained unchanged.
+- Purpose: provide direct telemetry for controlled T1018 Remote System Discovery activity.
+- Validation confirmed approved ICMP activity was recorded successfully.
+- Splunk Universal Forwarder collects the resulting Windows Firewall telemetry.
+- Firewall telemetry sourcetype: `windows:firewall`.
+- Runtime validation confirmed successful Splunk detection and Triggered Alerts visibility.
+
+### Change Summary
+
+- No OPNsense firewall rule, NAT rule, DHCP scope, VLAN, route, gateway, IP assignment, virtual switch, or physical switch configuration changed.
+- The firewall configuration change was limited to enabling successful-connection logging on the Windows workstation Domain profile.
+- Phase 10 Section 8 is technically validated; Phase 10 Section 11 documentation and portfolio reconciliation is in progress.

@@ -1394,3 +1394,32 @@
 - Verified Splunk continued ingesting Windows and OPNsense telemetry after reboot.
 - No VM hardware allocation, VM placement, IP assignment, NAT, DHCP, VLAN, routing, or firewall filtering rule changes were made.
 - Certificate validation and indexer acknowledgment remain documented as future Splunk forwarding hardening tasks.
+
+## Phase 10 - Section 8 Detection Engineering Progress - 2026-08-08
+
+### Scenario 2 - T1018 Remote System Discovery
+
+- Addressed the previous telemetry gap for controlled ICMP discovery activity.
+- Enabled Windows Defender Firewall successful-connection logging on the monitored Windows workstation.
+- Preserved the existing restricted inbound ICMP rule for the approved Kali source.
+- Extended Splunk Universal Forwarder collection to include Windows Firewall telemetry.
+- Indexed the new telemetry in Splunk with sourcetype `windows:firewall`.
+- Implemented the scheduled detection `VioletOps - T1018 Remote System Discovery`.
+- Observed several minutes of telemetry ingestion latency during testing.
+- Tuned the detection timing to account for late-arriving events while reducing repeated alerts from older indexed telemetry.
+- Runtime validation confirmed:
+  - successful controlled ICMP activity,
+  - Windows Firewall telemetry generation,
+  - Splunk ingestion,
+  - detection matching,
+  - and successful Splunk Triggered Alerts visibility.
+
+### Documentation and Change State
+
+- Network architecture documentation updated.
+- VM inventory updated.
+- Firewall documentation updated.
+- IP addressing documentation confirmed no addressing changes.
+- No VM placement, resource allocation, IP addressing, routing, NAT, DHCP, VLAN, or virtual-switch changes occurred.
+- No Git commit or push has been performed.
+- Phase 10 Section 8 remains in progress pending remaining detection engineering, evidence sanitization, final documentation reconciliation, repository review, and validation.

@@ -523,3 +523,30 @@ Initial VM placement has been approved, but no additional Windows, Linux, SIEM, 
 
 - No VM was created, deleted, moved, resized, or reconfigured.
 - No CPU, memory, disk, MAC address, IP address, virtual-switch, checkpoint, or host-placement change occurred.
+
+## Phase 10 Section 8 - Detection Engineering Inventory Update - 2026-08-08
+
+### VioletOps-WIN11
+
+- Windows Defender Firewall Domain profile remains enabled.
+- Successful-connection logging was enabled to provide telemetry for controlled ICMP discovery activity.
+- The existing inbound ICMPv4 Echo Request rule remained restricted to the approved Kali source.
+- Splunk Universal Forwarder was extended to collect the Windows Firewall log.
+- Firewall telemetry is forwarded to the existing VioletOps-SPLUNK receiver over TCP 9997.
+- Effective Splunk index: `main`.
+- Firewall telemetry sourcetype: `windows:firewall`.
+- SplunkForwarder service was restarted and verified operational after the collection change.
+
+### VioletOps-SPLUNK
+
+- Existing Splunk Enterprise deployment and TCP 9997 receiving service remain unchanged.
+- Windows Firewall telemetry from VioletOps-WIN11 is indexed successfully.
+- Scenario 2 detection: `VioletOps - T1018 Remote System Discovery`.
+- Runtime validation confirmed successful detection and creation of a Splunk Triggered Alerts entry.
+
+### VM Change Summary
+
+- No VM was created, deleted, moved, resized, restored, or checkpointed.
+- No CPU, memory, disk, MAC address, IP address, virtual-switch assignment, or host placement changed.
+- Changes were limited to endpoint firewall logging, log collection, and Splunk detection engineering.
+- Phase 10 Section 8 is technically validated; Phase 10 Section 11 documentation and portfolio reconciliation is in progress.
