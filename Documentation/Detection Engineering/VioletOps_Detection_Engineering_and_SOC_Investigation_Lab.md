@@ -3,7 +3,7 @@
 ## Project Status
 
 - Phase: 6
-- Status: In Progress
+- Status: Complete
 - Project type: Detection engineering and SOC investigation portfolio lab
 - Phase 5 prerequisite: Complete and verified
 - Phase 5 GitHub commit: `378e3f68dc40bb2fce294e824f1afe4b043ee240`

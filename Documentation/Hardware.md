@@ -2,9 +2,9 @@
 
 
 
-Status: In Progress  
+Status: Complete
 
-Last Updated: July 11, 2026
+Last Updated: August 8, 2026
 
 
 
@@ -72,13 +72,13 @@ Last Updated: July 11, 2026
 
 - Previous Ethernet management IPv4 address: <HOST-2-PREVIOUS-MANAGEMENT-IP>
 
-- Ethernet MAC address: E4-54-E8-96-76-5C
+- Ethernet MAC address: <ETHERNET-MAC>
 
 - Ethernet link speed: 1 Gbps
 
 - Wi-Fi adapter name: Wi-Fi 2
 
-- Wi-Fi MAC address: E8-4E-06-7C-EA-2E
+- Wi-Fi MAC address: <WIFI-MAC>
 
 - Wi-Fi status: Disconnected
 
@@ -196,7 +196,13 @@ Last Updated: July 11, 2026
 - Model: TP-Link TL-SG108E
 - Label text: `UN/6.6`
 - Hardware version: Unverified
-- MAC address: `50-3D-D1-E2-28-7C`
-- Serial number: `Y258220001247`
+- MAC address: <MANAGED-SWITCH-MAC>
+- Serial number: <MANAGED-SWITCH-SERIAL>
 - Current power state: Powered on
-- Current deployment status: Powered on for testing; not yet connected to the network
+- Current deployment status: Connected and operational in the VioletOps dual-host topology
+- Verified physical port assignments:
+  - Port 1: Upstream gateway
+  - Port 2: Host 2 built-in Ethernet
+  - Port 3: Host 1 built-in Ethernet
+  - Port 4: Host 1 USB Ethernet
+- VLAN 10 provides the isolated OPNsense WAN path through Ports 1 and 3.

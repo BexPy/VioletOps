@@ -1,9 +1,9 @@
 # VioletOps VM Inventory
 
-Status: Phase 3 Technical Deployment Complete
-Last Updated: July 21, 2026
+Status: Complete
+Last Updated: August 8, 2026
 
-## Host 1 â€” Original VioletOps Hyper-V Host
+## Host 1 — Original VioletOps Hyper-V Host
 
 ### OPNsense-Gateway
 
@@ -28,18 +28,18 @@ Last Updated: July 21, 2026
   - MAC address: `<OPNSENSE-LAN-MAC>`
   - Hyper-V switch: `VioletOps-LAN`
   - IPv4 address: `<OPNSENSE-LAN-IP>/24`
-  - DHCP range: `<VIOLETOPS-DHCP-START>â€“<VIOLETOPS-DHCP-END>`
+  - DHCP range: `<VIOLETOPS-DHCP-START>–<VIOLETOPS-DHCP-END>`
 - Web GUI: `https://<OPNSENSE-LAN-IP>`
 - Current phase: Phase 2 OPNsense firewall configuration and validation completed
 
-## Host 2 â€” <HOST-2-NAME>
+## Host 2 — <HOST-2-NAME>
 
 - Hyper-V status: Enabled and verified
 - Existing virtual machines: 0
 - Assigned VioletOps virtual machines: None
 - Custom virtual switches: None
 - Built-in virtual switches:
-  - `Default Switch` â€” Internal
+  - `Default Switch` — Internal
 - VM workload role: Core server and monitoring host
 - VM storage design: Configured and verified under `C:\HyperV`
 
@@ -49,7 +49,7 @@ Initial VM placement has been approved, but no additional Windows, Linux, SIEM, 
 
 ## Approved Planned VM Placement
 
-### Host 1 â€” Planned
+### Host 1 — Planned
 
 - Windows 11 client
   - Planned memory: 6 GB
@@ -60,10 +60,10 @@ Initial VM placement has been approved, but no additional Windows, Linux, SIEM, 
   - Purpose: Controlled attack and validation system
   - Deployment status: Not created
 
-### Host 2 â€” Planned
+### Host 2 — Planned
 
 - Windows Server / Active Directory
-  - Planned memory: 4â€“6 GB
+  - Planned memory: 4–6 GB
   - Purpose: Domain controller, DNS, users, groups, and Group Policy
   - Deployment status: Not created
 - Wazuh server
@@ -71,7 +71,7 @@ Initial VM placement has been approved, but no additional Windows, Linux, SIEM, 
   - Purpose: Endpoint monitoring, alerting, and security analytics
   - Deployment status: Not created
 - Splunk server
-  - Planned memory: 6â€“8 GB
+  - Planned memory: 6–8 GB
   - Purpose: Log ingestion, dashboards, searches, and investigations
   - Deployment status: Not created
 
@@ -126,9 +126,9 @@ Initial VM placement has been approved, but no additional Windows, Linux, SIEM, 
 
 
 
-## Phase 3 Hyper-V Host Capacity Baseline â€” 2026-07-17
+## Phase 3 Hyper-V Host Capacity Baseline — 2026-07-17
 
-### Host 1 â€” <HOST-1-NAME>
+### Host 1 — <HOST-1-NAME>
 
 - Hardware: Dell OptiPlex 7070
 - Processor: Intel Core i7-9700T
@@ -149,12 +149,12 @@ Initial VM placement has been approved, but no additional Windows, Linux, SIEM, 
   - Startup memory: 4 GB static
   - Virtual disk: V:\HyperV-VMs\OPNsense-Gateway\OPNsense-OS.vhdx
 - Virtual switches:
-  - VioletOps-WAN â€” External
-  - VioletOps-LAN â€” Internal
-  - Default Switch â€” Internal
+  - VioletOps-WAN — External
+  - VioletOps-LAN — Internal
+  - Default Switch — Internal
 - Approved role: Gateway, network edge, Windows 11 client, and Kali Linux host
 
-### Host 2 â€” <HOST-2-NAME>
+### Host 2 — <HOST-2-NAME>
 
 - Hardware: Dell OptiPlex 7070
 - Processor: Intel Core i7-9700
@@ -169,7 +169,7 @@ Initial VM placement has been approved, but no additional Windows, Linux, SIEM, 
   - C:\HyperV\Virtual Hard Disks
 - Existing VMs: None
 - Virtual switches:
-  - Default Switch â€” Internal
+  - Default Switch — Internal
 - Approved role: Windows Server / Active Directory, Wazuh, and Splunk host
 
 ### Capacity Controls
@@ -182,7 +182,7 @@ Initial VM placement has been approved, but no additional Windows, Linux, SIEM, 
 - No VM, IP address, VLAN, route, firewall rule, NAT rule, or virtual-switch configuration was changed during this documentation reconciliation.
 - GitHub documentation remains unchanged pending the separate sanitization review.
 
-### Host 1 Storage Preparation â€” 2026-07-19
+### Host 1 Storage Preparation — 2026-07-19
 
 - New Host 1 storage structure:
   - VM configuration folder: C:\HyperV\Virtual Machines
@@ -192,7 +192,7 @@ Initial VM placement has been approved, but no additional Windows, Linux, SIEM, 
 - Hyper-V defaults remain unchanged pending separate configuration and verification.
 - No new VM was created.
 
-### Host 1 Storage Assignment â€” 2026-07-19
+### Host 1 Storage Assignment — 2026-07-19
 
 - Default VM configuration path: `C:\HyperV\Virtual Machines`
 - Default virtual disk path: `C:\HyperV\Virtual Hard Disks`
@@ -200,7 +200,7 @@ Initial VM placement has been approved, but no additional Windows, Linux, SIEM, 
 - OPNsense remains stored separately on `V:`.
 - No new VM was created and no existing VM was moved.
 
-## Verified Phase 3 Deployment Allocation â€” 2026-07-19
+## Verified Phase 3 Deployment Allocation — 2026-07-19
 
 | Host | VM | RAM | vCPU | Maximum Dynamic VHDX | Planned IP | Status |
 |---|---|---:|---:|---:|---|---|
@@ -216,7 +216,7 @@ Initial VM placement has been approved, but no additional Windows, Linux, SIEM, 
 - Security Onion remains deferred.
 - Allocations are approved initial values and remain subject to post-deployment performance validation.
 
-### Windows Server Installation Media â€” 2026-07-19
+### Windows Server Installation Media — 2026-07-19
 
 - Host: Host 2 (`<HOST-2-NAME>`)
 - Product: Windows Server 2025 Evaluation
@@ -228,7 +228,7 @@ Initial VM placement has been approved, but no additional Windows, Linux, SIEM, 
 - Hash verification result: Passed
 - ISO has not been mounted or used to create a VM yet.
 
-### Windows 11 Installation Media â€” 2026-07-19
+### Windows 11 Installation Media — 2026-07-19
 
 - Host: Host 1 (`<HOST-1-NAME>`)
 - Product: Windows 11 25H2 multi-edition
@@ -240,7 +240,7 @@ Initial VM placement has been approved, but no additional Windows, Linux, SIEM, 
 - Hash verification result: Passed
 - ISO has not been mounted or used to create a VM yet.
 
-### Kali Linux Installation Media â€” 2026-07-19
+### Kali Linux Installation Media — 2026-07-19
 
 - Host: Host 1 (`<HOST-1-NAME>`)
 - Product: Kali Linux 2026.2 Installer
@@ -252,7 +252,7 @@ Initial VM placement has been approved, but no additional Windows, Linux, SIEM, 
 - Final-location hash comparison: Passed
 - ISO has not been mounted or used to create a VM yet.
 
-### Ubuntu Server Installation Media â€” 2026-07-19
+### Ubuntu Server Installation Media — 2026-07-19
 
 - Host: Host 2 (`<HOST-2-NAME>`)
 - Product: Ubuntu Server 22.04.5 LTS
@@ -264,9 +264,9 @@ Initial VM placement has been approved, but no additional Windows, Linux, SIEM, 
 - Planned use: Wazuh and Splunk server VMs
 - ISO has not been mounted or used to create a VM yet.
 
-## Phase 3 Final Installation Media Baseline â€” 2026-07-19
+## Phase 3 Final Installation Media Baseline — 2026-07-19
 
-### Host 1 â€” <HOST-1-NAME>
+### Host 1 — <HOST-1-NAME>
 
 - Kali Linux 2026.2 Installer: `C:\VioletOps\ISO\kali-linux-2026.2-installer-amd64.iso`
 - Windows 11 25H2: `C:\VioletOps\ISO\Win11_25H2_English_x64_v2.iso`
@@ -275,7 +275,7 @@ Initial VM placement has been approved, but no additional Windows, Linux, SIEM, 
 - Ubuntu Server 22.04.5 reference copy: `V:\ISO_Reps\ubuntu-22.04.5-live-server-amd64.iso`
 - Both OPNsense files have matching SHA-256 hashes and are verified duplicates.
 
-### Host 2 â€” <HOST-2-NAME>
+### Host 2 — <HOST-2-NAME>
 
 - Windows Server 2025 Evaluation: `C:\VioletOps\ISO\26100.32230.260111-0550.lt_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso`
 - Ubuntu Server 22.04.5 LTS: `C:\VioletOps\ISO\ubuntu-22.04.5-live-server-amd64.iso`
@@ -354,7 +354,7 @@ Initial VM placement has been approved, but no additional Windows, Linux, SIEM, 
 - Controlled restart and post-restart domain validation passed
 - GitHub documentation was not updated or pushed pending sanitization review
 
-## Post-Rewire VM Recovery Validation â€” 2026-07-20
+## Post-Rewire VM Recovery Validation — 2026-07-20
 
 - OPNsense-Gateway started successfully and reported Operating normally.
 - OPNsense LAN address <OPNSENSE-LAN-IP> responded with 0% packet loss.
@@ -378,7 +378,7 @@ Initial VM placement has been approved, but no additional Windows, Linux, SIEM, 
 - No OPNsense, NAT, DHCP, VLAN, physical-switch, or virtual-switch configuration was changed.
 - GitHub documentation was not updated or pushed pending sanitization review.
 
-## Phase 3 Kali Linux Deployment â€” 2026-07-20
+## Phase 3 Kali Linux Deployment — 2026-07-20
 
 - VM name: VioletOps-KALI
 - Hyper-V host: <HOST-1-NAME>
@@ -411,7 +411,7 @@ Initial VM placement has been approved, but no additional Windows, Linux, SIEM, 
 - No OPNsense, NAT, DHCP, VLAN, physical-switch, virtual-switch, or firewall configuration was changed.
 - GitHub documentation was not updated or pushed pending sanitization review.
 
-## Phase 3 Wazuh Deployment â€” 2026-07-21
+## Phase 3 Wazuh Deployment — 2026-07-21
 
 - VM name: VioletOps-WAZUH
 - Hyper-V host: <HOST-2-NAME>
@@ -549,4 +549,4 @@ Initial VM placement has been approved, but no additional Windows, Linux, SIEM, 
 - No VM was created, deleted, moved, resized, restored, or checkpointed.
 - No CPU, memory, disk, MAC address, IP address, virtual-switch assignment, or host placement changed.
 - Changes were limited to endpoint firewall logging, log collection, and Splunk detection engineering.
-- Phase 10 Section 8 is technically validated; Phase 10 Section 11 documentation and portfolio reconciliation is in progress.
+- Phase 10 is technically validated, documented, published, and fully complete.

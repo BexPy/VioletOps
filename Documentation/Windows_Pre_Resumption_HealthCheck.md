@@ -22,7 +22,7 @@ We'll check:
 * Existing Hyper-V virtual switches  
 * Old VMware adapters (if any remain)
 
-That takes maybe 20â€“30 minutes, and once it's done we'll have a clean foundation.
+That takes maybe 20–30 minutes, and once it's done we'll have a clean foundation.
 
 \#\# Verified Results
 

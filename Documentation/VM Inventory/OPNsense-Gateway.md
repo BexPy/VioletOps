@@ -1,14 +1,14 @@
 # OPNsense-Gateway VM Inventory
 
-Status: In Progress  
-Last Updated: July 3, 2026
+Status: Complete
+Last Updated: August 8, 2026
 
 ## Identity
 
 - VM name: OPNsense-Gateway
 - Intended role: VioletOps virtual firewall and gateway
 - Hypervisor: Microsoft Hyper-V
-- Current power state: Off
+- Deployment state: Installed and validated
 
 ## Compute Resources
 
@@ -26,18 +26,18 @@ Last Updated: July 3, 2026
 ### WAN Adapter
 
 - Adapter name: `WAN`
-- MAC address: `00155D0AF011`
+- MAC address: <OPNSENSE-WAN-MAC>
 - Intended role: OPNsense WAN
 - Current virtual switch: `VioletOps-WAN`
-- Planned switch: `VioletOps-WAN`
+- Physical WAN path: Connected through managed-switch VLAN 10
 
 ### LAN Adapter
 
 - Adapter name: `LAN`
-- MAC address: `00155D0AF012`
+- MAC address: <OPNSENSE-LAN-MAC>
 - Intended role: OPNsense LAN
 - Current virtual switch: `VioletOps-LAN`
-- Planned OPNsense LAN address: Not yet configured
+- IPv4 address: <OPNSENSE-LAN-IP>/24
 
 ## Checkpoints
 

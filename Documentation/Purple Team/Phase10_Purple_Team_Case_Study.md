@@ -2,7 +2,7 @@
 
 ## Case Study Status
 
-Technically validated, sanitized, and prepared for final repository review. Final public approval remains pending Section 12 repository review and Git validation.
+Technically validated, sanitized, published, and fully complete.
 
 ## Executive Summary
 
@@ -314,7 +314,7 @@ The following screenshots are retained as supporting internal evidence but are n
 - `P10-05_Malformed_T1046_Splunk_Detection.png` - Intermediate troubleshooting evidence from the malformed detection configuration.
 - `P10-06_T1046_Splunk_Alert_Created.png` - Alert-creation evidence superseded by later runtime and retest validation.
 
-Section 11 sanitization and sensitive-data review are complete; final repository review remains in Section 12.
+Section 11 sanitization and sensitive-data review are complete. Section 12 repository review, Git validation, publication, and final closure are complete.
 
 ## Interview Talking Points
 

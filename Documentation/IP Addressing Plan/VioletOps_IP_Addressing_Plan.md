@@ -1,7 +1,7 @@
 # VioletOps IP Addressing Plan
 
-Status: In Progress  
-Last Updated: July 11, 2026
+Status: Complete
+Last Updated: August 8, 2026
 
 ## Home Management Network
 
@@ -66,7 +66,7 @@ Network: `<VIOLETOPS-LAN>`
 - LAN gateway remains <OPNSENSE-LAN-IP>/24.
 - DHCP scope remains <VIOLETOPS-DHCP-START>-<VIOLETOPS-DHCP-END>.
 
-## Phase 3 Planned Static Address Reservations â€” 2026-07-17
+## Phase 3 Planned Static Address Reservations — 2026-07-17
 
 These addresses are reserved in documentation only. They have not yet been configured.
 
@@ -104,13 +104,13 @@ These addresses are reserved in documentation only. They have not yet been confi
 
 - OPNsense remains <OPNSENSE-LAN-IP>/24.
 - Host 1 remains <HOST-1-LAB-IP>/24.
-- OPNsense DHCP remains <VIOLETOPS-DHCP-START>â€“<VIOLETOPS-DHCP-END>.
+- OPNsense DHCP remains <VIOLETOPS-DHCP-START>–<VIOLETOPS-DHCP-END>.
 - Planned static infrastructure addresses remain outside the DHCP scope.
 - No address listed in this section is active until individually configured and verified.
 - Firewall rules will be reviewed when each workload is deployed.
 - GitHub documentation remains unchanged pending sanitization review.
 
-## Phase 3 Active Static Address â€” Kali Linux â€” 2026-07-20
+## Phase 3 Active Static Address — Kali Linux — 2026-07-20
 
 - Hostname: violetops-kali
 - IPv4 address: <KALI-IP>/24
@@ -120,10 +120,10 @@ These addresses are reserved in documentation only. They have not yet been confi
 - Interface: eth0
 - MAC address: <KALI-MAC>
 - Status: Configured, verified, and persistent after reboot
-- Address remains outside the OPNsense DHCP scope of <VIOLETOPS-DHCP-START>â€“<VIOLETOPS-DHCP-END>.
+- Address remains outside the OPNsense DHCP scope of <VIOLETOPS-DHCP-START>–<VIOLETOPS-DHCP-END>.
 - No DHCP, NAT, firewall, VLAN, or routing changes were required.
 
-## Phase 3 Active Static Address â€” Wazuh â€” 2026-07-21
+## Phase 3 Active Static Address — Wazuh — 2026-07-21
 
 - Hostname: wazuh
 - IPv4 address: <WAZUH-IP>/24
@@ -134,7 +134,7 @@ These addresses are reserved in documentation only. They have not yet been confi
 - MAC address: <WAZUH-MAC>
 - Status: Configured, verified, and persistent after reboot
 - Dashboard: https://<WAZUH-IP>
-- Address remains outside the OPNsense DHCP scope of <VIOLETOPS-DHCP-START>â€“<VIOLETOPS-DHCP-END>.
+- Address remains outside the OPNsense DHCP scope of <VIOLETOPS-DHCP-START>–<VIOLETOPS-DHCP-END>.
 - No DHCP, NAT, firewall, VLAN, or routing changes were required.
 
 ## Phase 3 Active Static Address - Splunk - 2026-07-21
@@ -149,7 +149,7 @@ These addresses are reserved in documentation only. They have not yet been confi
 - Status: Configured, verified, and persistent after reboot
 - Splunk Web: http://<SPLUNK-IP>:8000
 - Splunk management API: TCP 8089
-- Address remains outside the OPNsense DHCP scope of <VIOLETOPS-DHCP-START>â€“<VIOLETOPS-DHCP-END>.
+- Address remains outside the OPNsense DHCP scope of <VIOLETOPS-DHCP-START>–<VIOLETOPS-DHCP-END>.
 - Ubuntu UFW is inactive; access is currently controlled by the isolated VioletOps LAN boundary.
 - No DHCP, NAT, firewall, VLAN, routing, physical-switch, or virtual-switch changes were required.
 
@@ -158,4 +158,4 @@ These addresses are reserved in documentation only. They have not yet been confi
 - No IP address, subnet, gateway, DNS server, DHCP scope, route, NAT rule, VLAN, virtual switch, or physical switch assignment changed.
 - Existing VioletOps source, target, and Splunk addressing remained unchanged.
 - Section 8 changes were limited to Windows Firewall logging, Splunk Universal Forwarder collection, and Splunk detection engineering.
-- Phase 10 Section 8 is technically validated; Phase 10 Section 11 documentation and portfolio reconciliation is in progress.
+- Phase 10 is technically validated, documented, published, and fully complete.

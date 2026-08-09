@@ -1,13 +1,13 @@
 # VioletOps Dual-Host Baseline Architecture
 
-Status: In Progress  
-Last Updated: July 11, 2026
+Status: Complete
+Last Updated: August 8, 2026
 
 ## Scope
 
 This document records the verified physical and virtualization baseline for the two-host VioletOps lab before Host 2 workload placement, storage redesign, monitor integration, or OPNsense WAN validation.
 
-## Host 1 â€” Original VioletOps Hyper-V Host
+## Host 1 — Original VioletOps Hyper-V Host
 
 - Model: Dell OptiPlex 7070 Micro
 - CPU: Intel Core i7-9700
@@ -21,8 +21,8 @@ This document records the verified physical and virtualization baseline for the 
 - Current assigned VM:
   - `OPNsense-Gateway`
 - Current custom virtual switches:
-  - `VioletOps-LAN` â€” Internal
-  - `VioletOps-WAN` â€” External
+  - `VioletOps-LAN` — Internal
+  - `VioletOps-WAN` — External
 - Physical Ethernet role:
   - Dedicated to `VioletOps-WAN`
 - OPNsense WAN physical path:
@@ -30,7 +30,7 @@ This document records the verified physical and virtualization baseline for the 
   - Upstream gateway Port 1 -> switch Port 1 -> switch Port 3 -> Host 1 Ethernet -> VioletOps-WAN -> OPNsense WAN
   - WAN DHCP and outbound connectivity verified
 
-## Host 2 â€” <HOST-2-NAME>
+## Host 2 — <HOST-2-NAME>
 
 - Model: Dell OptiPlex 7070
 - CPU: Intel Core i7-9700
@@ -45,7 +45,7 @@ This document records the verified physical and virtualization baseline for the 
 - Existing virtual machines: 0
 - Custom virtual switches: 0
 - Built-in virtual switches:
-  - `Default Switch` â€” Internal
+  - `Default Switch` — Internal
 - VM workload role: Core server and monitoring host
 - VM storage design: Configured and verified under `C:\HyperV`
 - USB Wi-Fi adapter driver: Installed and verified
@@ -98,7 +98,7 @@ Host 1 Hyper-V
     |
     +---- VioletOps-LAN ---- OPNsense LAN
                              <OPNSENSE-LAN-IP>/24
-                             DHCP <VIOLETOPS-DHCP-START>â€“<VIOLETOPS-DHCP-END>
+                             DHCP <VIOLETOPS-DHCP-START>–<VIOLETOPS-DHCP-END>
 Host 2 Hyper-V
     |
     +---- Default Switch only
@@ -139,7 +139,7 @@ Host 2 Hyper-V
 
 ## Verified Host Capacity
 
-### Host 1 â€” <HOST-1-NAME>
+### Host 1 — <HOST-1-NAME>
 
 - Total physical memory: 31.79 GB
 - C: capacity: 780.50 GB
@@ -147,7 +147,7 @@ Host 2 Hyper-V
 - V: capacity: 150.00 GB
 - V: free space: 138.18 GB
 
-### Host 2 â€” <HOST-2-NAME>
+### Host 2 — <HOST-2-NAME>
 
 - Total physical memory: 31.78 GB
 - C: capacity: 952.93 GB
@@ -162,7 +162,7 @@ Host 2 Hyper-V
 
 ## Approved Initial VM Placement
 
-### Host 1 â€” Network and Test Endpoints
+### Host 1 — Network and Test Endpoints
 
 - `OPNsense-Gateway`
   - Memory: 4 GB
@@ -177,16 +177,16 @@ Host 2 Hyper-V
   - Status: Optional
   - Use only when required
 
-### Host 2 â€” Core Server and Monitoring Services
+### Host 2 — Core Server and Monitoring Services
 
 - Windows Server / Active Directory
-  - Planned memory: 4â€“6 GB
+  - Planned memory: 4–6 GB
   - Role: Domain controller, DNS, users, groups, and Group Policy
 - Wazuh server
   - Planned memory: 8 GB
   - Role: Endpoint monitoring, alerting, and security analytics
 - Splunk server
-  - Planned memory: 6â€“8 GB
+  - Planned memory: 6–8 GB
   - Role: Log ingestion, searching, dashboards, and investigations
 
 ### Placement Decisions
@@ -292,7 +292,7 @@ Host 2 Hyper-V
 - Host 2 Wi-Fi remains the management path.
 - Host 2 Ethernet remains available for future VioletOps lab networking.
 
-## Managed Switch Port Assignment â€” Port 2
+## Managed Switch Port Assignment — Port 2
 
 - Switch: TP-Link TL-SG108E
 - Switch port: 2
@@ -313,7 +313,7 @@ Host 2 Hyper-V
 
 
 
-## Managed Switch WAN Assignment â€” Ports 1 and 3
+## Managed Switch WAN Assignment — Ports 1 and 3
 
 - Port 1 purpose: Upstream connection to the home gateway
 - Port 3 purpose: Host 1 dedicated OPNsense WAN connection
@@ -323,7 +323,7 @@ Host 2 Hyper-V
 - Port 1 PVID: 10
 - Port 3 PVID: 10
 - Link speed: 1000 Mbps full duplex on both ports
-- VLAN 1 membership: Ports 2 and 4â€“8
+- VLAN 1 membership: Ports 2 and 4–8
 - Host 2 Port 2 PVID: 1
 - Host 2 Ethernet verification:
   - No IPv4 address from the home gateway
@@ -331,7 +331,7 @@ Host 2 Hyper-V
   - Only a link-local IPv6 address
 - Result: Host 2 Port 2 is isolated from the OPNsense WAN path.
 
-## Phase 3 Planned Inter-Host VioletOps LAN â€” 2026-07-17
+## Phase 3 Planned Inter-Host VioletOps LAN — 2026-07-17
 
 Status: Implemented and verified across Host 1, Host 2, and OPNsense
 
@@ -361,7 +361,7 @@ Status: Implemented and verified across Host 1, Host 2, and OPNsense
 - OPNsense LAN gateway: <OPNSENSE-LAN-IP>/24
 - Host 1 VioletOps LAN management vNIC: <HOST-1-LAB-IP>/24
 - Host 2 VioletOps LAN management vNIC: <HOST-2-LAB-IP>/24
-- DHCP scope: <VIOLETOPS-DHCP-START>â€“<VIOLETOPS-DHCP-END>
+- DHCP scope: <VIOLETOPS-DHCP-START>–<VIOLETOPS-DHCP-END>
 - Planned infrastructure VM addresses are documented in the IP Addressing Plan.
 
 ### Security Controls
@@ -375,7 +375,7 @@ Status: Implemented and verified across Host 1, Host 2, and OPNsense
 - GitHub documentation remains unchanged pending the separate sanitization review.
 
 
-### Host 1 Implementation Verification â€” 2026-07-18
+### Host 1 Implementation Verification — 2026-07-18
 
 - USB Ethernet adapter: ASIX AX88179
 - Windows adapter name: VioletOps-LAN-USB
@@ -396,7 +396,7 @@ Status: Implemented and verified across Host 1, Host 2, and OPNsense
 - Host 2 inter-host LAN implementation is complete and verified.
 
 
-### Host 2 Implementation Verification â€” 2026-07-18
+### Host 2 Implementation Verification — 2026-07-18
 
 - Host: <HOST-2-NAME>
 - Physical Ethernet adapter: Intel(R) Ethernet Connection (7) I219-LM
@@ -420,7 +420,7 @@ Status: Implemented and verified across Host 1, Host 2, and OPNsense
 - Inter-host packet loss: 0 percent
 
 
-### Host 1 Storage Preparation â€” 2026-07-19
+### Host 1 Storage Preparation — 2026-07-19
 
 - Created C:\HyperV.
 - Created C:\HyperV\Virtual Machines.
@@ -431,7 +431,7 @@ Status: Implemented and verified across Host 1, Host 2, and OPNsense
 - No VM, virtual switch, IP address, MAC address, firewall rule, NAT rule, DHCP setting, or VLAN configuration was changed.
 - GitHub documentation was not updated or pushed pending sanitization review.
 
-### Host 1 Hyper-V Storage Assignment â€” 2026-07-19
+### Host 1 Hyper-V Storage Assignment — 2026-07-19
 
 - Host 1 default virtual machine path: `C:\HyperV\Virtual Machines`
 - Host 1 default virtual hard disk path: `C:\HyperV\Virtual Hard Disks`
@@ -441,7 +441,7 @@ Status: Implemented and verified across Host 1, Host 2, and OPNsense
 - No virtual switch, IP address, MAC address, firewall rule, NAT rule, DHCP setting, or VLAN configuration was changed.
 - GitHub documentation was not updated or pushed pending sanitization review.
 
-### Phase 3 Verified VM Capacity and Placement â€” 2026-07-19
+### Phase 3 Verified VM Capacity and Placement — 2026-07-19
 
 #### Host 1
 
@@ -542,7 +542,7 @@ Status: Implemented and verified across Host 1, Host 2, and OPNsense
 - No OPNsense firewall rule, NAT rule, DHCP scope, VLAN, physical-switch, or virtual-switch configuration was changed
 - GitHub documentation was not updated or pushed pending sanitization review
 
-## Post-Rewire Network Validation â€” 2026-07-20
+## Post-Rewire Network Validation — 2026-07-20
 
 - Host 1 VioletOps LAN: <HOST-1-LAB-IP>/24
 - Host 2 VioletOps LAN: <HOST-2-LAB-IP>/24
@@ -564,7 +564,7 @@ Status: Implemented and verified across Host 1, Host 2, and OPNsense
 - No OPNsense, NAT, DHCP, VLAN, physical-switch, or virtual-switch configuration was changed.
 - GitHub documentation was not updated or pushed pending sanitization review.
 
-## Post-Rewire VM Recovery Validation â€” 2026-07-20
+## Post-Rewire VM Recovery Validation — 2026-07-20
 
 - OPNsense-Gateway started successfully and reported Operating normally.
 - OPNsense LAN address <OPNSENSE-LAN-IP> responded with 0% packet loss.
@@ -588,7 +588,7 @@ Status: Implemented and verified across Host 1, Host 2, and OPNsense
 - No OPNsense, NAT, DHCP, VLAN, physical-switch, or virtual-switch configuration was changed.
 - GitHub documentation was not updated or pushed pending sanitization review.
 
-## Phase 3 Kali Linux Deployment â€” 2026-07-20
+## Phase 3 Kali Linux Deployment — 2026-07-20
 
 - VM name: VioletOps-KALI
 - Hyper-V host: <HOST-1-NAME>
@@ -621,7 +621,7 @@ Status: Implemented and verified across Host 1, Host 2, and OPNsense
 - No OPNsense, NAT, DHCP, VLAN, physical-switch, virtual-switch, or firewall configuration was changed.
 - GitHub documentation was not updated or pushed pending sanitization review.
 
-## Phase 3 Wazuh Architecture Update â€” 2026-07-21
+## Phase 3 Wazuh Architecture Update — 2026-07-21
 
 - Host 2: <HOST-2-NAME>
 - VM: VioletOps-WAZUH
@@ -779,4 +779,4 @@ Status: Implemented and verified across Host 1, Host 2, and OPNsense
 - No IP address, subnet, gateway, DNS, DHCP, NAT, VLAN, routing, virtual-switch, or physical-switch configuration changed.
 - No new firewall allow or block rule was created.
 - Changes were limited to Windows Firewall logging, Splunk Universal Forwarder collection, and Splunk detection engineering.
-- Phase 10 Section 8 is technically validated; Phase 10 Section 11 documentation and portfolio reconciliation is in progress.
+- Phase 10 is technically validated, documented, published, and fully complete.
