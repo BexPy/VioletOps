@@ -1439,3 +1439,34 @@
 - Legacy character-encoding artifacts were corrected in affected public documentation.
 - No network architecture, VM configuration, IP assignment, firewall rule, routing, NAT, DHCP, VLAN, service, or logging-pipeline configuration changed during this portfolio reconciliation.
 - Current project status: Fully complete and portfolio-ready pending final Git commit and push of this documentation reconciliation.
+
+## Architecture Documentation Cleanup - 2026-08-10
+
+- Cleaned and condensed `Documentation\Architecture\VioletOps_Dual_Host_Baseline.md` into the final recruiter-facing VioletOps dual-host architecture document.
+- Updated the document title, final host roles, VM placement, managed-switch and VLAN design, identity architecture, centralized logging architecture, and Phases 6-10 security operations summary.
+- Removed obsolete build-history, temporary implementation notes, resolved planning items, and non-security workstation details.
+- Final architecture reflects the verified two-host design:
+  - Host 1: OPNsense, WIN11, and Kali.
+  - Host 2: DC01, Wazuh, and Splunk.
+- Public topology addressing was sanitized with placeholders.
+- Markdown structure, UTF-8 encoding, stale-status language, IPv4 exposure, and whitespace formatting were validated.
+- Pre-cleanup rollback copy was preserved outside the Git repository under `C:\VioletOps\Backups`.
+- No network architecture implementation, VM configuration, IP assignment, firewall rule, routing, NAT, DHCP, VLAN, virtual-switch, service, or logging-pipeline configuration changed during this cleanup.
+- Architecture document status: Technically validated and documented.
+- Repository publication status: Not yet committed or pushed.
+
+## VM Inventory Documentation Cleanup - 2026-08-10
+
+- Reconciled `Documentation\VM Inventory\VioletOps_VM_Inventory.md` with the final validated VioletOps lab state.
+- Replaced stale planned and not-created VM status language with the verified six-VM deployment.
+- Confirmed final placement:
+  - Host 1: `OPNsense-Gateway`, `VioletOps-WIN11`, and `VioletOps-KALI`.
+  - Host 2: `VioletOps-DC01`, `VioletOps-WAZUH`, and `VioletOps-SPLUNK`.
+- Preserved dated Phase 3-10 deployment and validation records as historical evidence.
+- Updated installation-media status to reflect completed deployments.
+- Restored the verified running OPNsense version in the current VM summary.
+- Removed obsolete GitHub sanitization and deployment-pending language.
+- Pre-cleanup rollback copy was preserved under `C:\VioletOps\Backups`.
+- No VM configuration, resource allocation, IP assignment, firewall rule, routing, NAT, DHCP, VLAN, virtual-switch, service, or logging-pipeline configuration changed during this documentation cleanup.
+- VM inventory status: Technically validated and documented.
+- Repository publication status: Not yet committed or pushed.
