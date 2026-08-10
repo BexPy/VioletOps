@@ -1453,7 +1453,7 @@
 - Pre-cleanup rollback copy was preserved outside the Git repository under `C:\VioletOps\Backups`.
 - No network architecture implementation, VM configuration, IP assignment, firewall rule, routing, NAT, DHCP, VLAN, virtual-switch, service, or logging-pipeline configuration changed during this cleanup.
 - Architecture document status: Technically validated and documented.
-- Repository publication status: Not yet committed or pushed.
+- Repository publication status: Published to GitHub in commit 1726ab4c0cbd01cf8c96520861d1452551cd8984.
 
 ## VM Inventory Documentation Cleanup - 2026-08-10
 
@@ -1469,4 +1469,4 @@
 - Pre-cleanup rollback copy was preserved under `C:\VioletOps\Backups`.
 - No VM configuration, resource allocation, IP assignment, firewall rule, routing, NAT, DHCP, VLAN, virtual-switch, service, or logging-pipeline configuration changed during this documentation cleanup.
 - VM inventory status: Technically validated and documented.
-- Repository publication status: Not yet committed or pushed.
+- Repository publication status: Published to GitHub in commit 1726ab4c0cbd01cf8c96520861d1452551cd8984.
