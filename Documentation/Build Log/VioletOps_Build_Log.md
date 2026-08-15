@@ -1501,4 +1501,4 @@
 - Updated `Documentation\Architecture\Disk_Layout_Comparison.md` to remove stale July 3 free-space values, obsolete default Hyper-V paths, and references to VioletOps VMs as future deployments.
 - No disk partition, VM storage location, or Hyper-V storage configuration was changed during this review.
 - Disk layout documentation status: Technically validated and documented.
-- Repository publication status: Pending review and commit.
+- Repository publication status: Published to GitHub in commit 65bf01eb73c51a85f04e63c11f2f6e87b1a7d43a.
