@@ -1470,3 +1470,20 @@
 - No VM configuration, resource allocation, IP assignment, firewall rule, routing, NAT, DHCP, VLAN, virtual-switch, service, or logging-pipeline configuration changed during this documentation cleanup.
 - VM inventory status: Technically validated and documented.
 - Repository publication status: Published to GitHub in commit 1726ab4c0cbd01cf8c96520861d1452551cd8984.
+
+## GitHub Screenshot Sanitization Remediation - 2026-08-15
+
+- Reviewed all image files currently published in the VioletOps GitHub repository.
+- Verified 23 published screenshots against the trusted sanitized source folder:
+  `C:\Users\Admin\Pictures\GitHub Sanitized Screenshots`.
+- Initial SHA-256 comparison identified 10 differing files; subsequent visual sanitization review confirmed that only the 8 Phase 8 Attack Simulation screenshots required replacement.
+- Preserved rollback copies of the initially identified files in:
+  `C:\VioletOps\Backups\GitHub-Screenshot-Remediation-20260815`.
+- Replaced the 8 Phase 8 Attack Simulation screenshots with their verified sanitized counterparts.
+- Visually reviewed all 23 GitHub-published screenshots for sanitization consistency; only the 8 Phase 8 screenshots required remediation. The 8 replaced Phase 8 files were verified against the sanitized source copies.
+- Git change scope was reviewed and confirmed to contain only the 8 intended Phase 8 screenshot replacements plus this Build Log update.
+- No network architecture, VM configuration, IP assignment, firewall rule, routing, NAT, DHCP, VLAN, virtual-switch, service, detection, or logging-pipeline configuration changed during this remediation.
+- Screenshot sanitization remediation status: Technically validated and documented.
+- Repository publication status: Pending review and commit.
+
+
