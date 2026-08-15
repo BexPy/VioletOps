@@ -1484,6 +1484,6 @@
 - Git change scope was reviewed and confirmed to contain only the 8 intended Phase 8 screenshot replacements plus this Build Log update.
 - No network architecture, VM configuration, IP assignment, firewall rule, routing, NAT, DHCP, VLAN, virtual-switch, service, detection, or logging-pipeline configuration changed during this remediation.
 - Screenshot sanitization remediation status: Technically validated and documented.
-- Repository publication status: Pending review and commit.
+- Repository publication status: Published to GitHub in commit 508248f826a94ca957c13132b772dac745812294.
 
 
