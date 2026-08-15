@@ -1487,3 +1487,18 @@
 - Repository publication status: Published to GitHub in commit 508248f826a94ca957c13132b772dac745812294.
 
 
+
+## Disk Layout Documentation Revalidation - 2026-08-15
+
+- Revalidated the current `C:` and `V:` volume layout.
+- Confirmed `C:` is 780.5 GB with 563.4 GB free at time of review.
+- Confirmed `V:` is 150 GB with 132.18 GB free at time of review.
+- Confirmed `V:` remains labeled `HyperV-VMs`, uses NTFS, and has a 4 KB allocation unit size.
+- Confirmed the current Hyper-V default paths are:
+  - VM path: `C:\HyperV\Virtual Machines`
+  - VHD path: `C:\HyperV\Virtual Hard Disks`
+- Confirmed `OPNsense-Gateway` is the only VM virtual disk currently stored on `V:`.
+- Updated `Documentation\Architecture\Disk_Layout_Comparison.md` to remove stale July 3 free-space values, obsolete default Hyper-V paths, and references to VioletOps VMs as future deployments.
+- No disk partition, VM storage location, or Hyper-V storage configuration was changed during this review.
+- Disk layout documentation status: Technically validated and documented.
+- Repository publication status: Pending review and commit.
